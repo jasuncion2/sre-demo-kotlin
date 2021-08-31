@@ -37,6 +37,12 @@ class CalculatorComponent {
         }
         return a / b
     }
+
+    @Path("/minus")
+    @GET
+    fun minus(@QueryParam("a") a: Double, @QueryParam("b") b: Double): Double {
+        return a - b
+    }
 }
 
 class CalculatorApp : Application<CalculatorConfig>() {
