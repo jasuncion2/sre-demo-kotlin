@@ -1,0 +1,27 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.30'
+}
+
+group 'org.sre.demo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+}
+
+apply plugin: 'application'
+mainClassName = 'com.sre.demo.MainAppKt'
+
+ext.dropwizard_version = '2.0.24'
+
+dependencies {
+    implementation("io.dropwizard:dropwizard-core:$dropwizard_version")
+}
+
+run {
+    args = ['server', 'config/local.yaml']
+}
