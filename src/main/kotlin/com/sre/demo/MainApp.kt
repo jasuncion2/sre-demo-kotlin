@@ -22,6 +22,13 @@ class CalculatorComponent {
     fun add(@QueryParam("a") a: Double, @QueryParam("b") b: Double): Double {
         return a + b
     }
+	
+	
+	@Path("/minus")
+    @GET
+    fun minus(@QueryParam("a") a: Double, @QueryParam("b") b: Double): Double {
+        return a - b
+    }
 
     @Path("/multiply")
     @GET
@@ -36,6 +43,13 @@ class CalculatorComponent {
             throw WebApplicationException("Can't divide by zero")
         }
         return a / b
+    }
+
+
+    @Path("/minus")
+    @GET
+    fun minus(@QueryParam("a") a: Double, @QueryParam("b") b: Double): Double {
+        return a - b
     }
 }
 
